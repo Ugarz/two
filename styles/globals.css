@@ -1,16 +1,48 @@
-html,
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+@layer components {
+  .card {
+    border-radius: theme('borderRadius.lg');
+    box-shadow: theme('boxShadow.xl');
+  }
+}
+
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background-image: radial-gradient(#0a005f, #aa0039);
+  background-size: 250% 250%;
+  height: 100vh;
+  animation: borders 60s linear infinite;
+  color: white;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
 
-* {
-  box-sizing: border-box;
+@keyframes intro {
+  0%, 75% { transform: translateX(-100vw); }
+  100% { transform: translateX(0); }
+}
+@keyframes fade {
+    0%, 75% { opacity: 0; }
+    100% { opacity: 1; }
+}
+@keyframes reveal {
+    0%, 50% { opacity: 0; width: 0; }
+    100% { opacity: 1; width: 100%; }
+}
+@keyframes borders {
+    0%  { background-position: 0 0; }
+    20% { background-position: 100% 0; }
+    40% { background-position: 100% 100%; }
+    60% { background-position: 0 100%; }
+    100% { background-position: 0 0; }
+}
+@keyframes hi {
+    0%, 80% { transform: rotate(9deg) translate(0, 0); }
+    85% { transform: rotate(24deg) translate(0.33333vw, -0.25vw); }
+    90% { transform: rotate(9deg) translate(0, 0); }
+    95% { transform: rotate(24deg) translate(0.33333vw, -0.25vw); }
+    100% { transform: rotate(9deg) translate(0, 0); }
 }

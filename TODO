@@ -1,0 +1,59 @@
+const Home: NextPage = () => {
+  return (
+    <div className='container mx-auto'>
+      <Head>
+        <title>Ugo Arzur</title>
+        <meta name="description" content="FullStack web developer - Coding Monkey" />
+        <meta name="keywords" content="developer, javascript, coder, code, react, microservices, node, nodejs, toulouse, blockchain, web3" />
+        <meta name="revisit-after" content="1 month" />
+        <meta name="robots" content="All" />
+        <link rel="icon" href="/favicon.ico" />
+        <meta name="theme-color" content="#303239" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Ugo Arzur" />
+      </Head>
+      <header>
+        <h1 className='text-2xl text-white' title="Developer Javascript (react, nodejs)">Reactive Web Developer</h1>
+        <h2 title="Follow me on twitter">
+          <a href="https://twitter.com/ArzurUgo">
+            <span><em>Ugarz</em></span>
+            <span><em>Ugarz</em></span>
+            <span><em>Ugarz</em></span>
+          </a>
+        </h2>
+        <ul className="working-at">
+          <li>Developer at <a id="company" href="https://morning.com/">Morning</a></li>
+          <li><a rel="me" title="Follow me on Twitter" href="https://twitter.com/ArzurUgo">🐦</a></li>
+          <li><a rel="me" title="Contact me via Email" href="mailto:ugo.arzur@gmail.com">👋🏻</a></li>
+        </ul>
+        <span className="again" onClick={() => "history.go(0)"} title="Reload page">ANIMATE !</span>
+      </header>
+      <main className="projects-wrapper">
+        <section className="twitch-extension-goals">
+          <div className="content">
+            <h3>Twitch extension</h3>
+            <p>I'm Co-Creator of a Twitch Extension named "Goals".<br />
+              <a target="blank" href="https://dashboard.twitch.tv/extensions/98s7sst7jz68hge42kqgodvimey3iv">This extension</a>
+              aim to connect the streamer's community to the streamer's goals on his channel. By this extension anyone coming to This
+              channel car know what the streamer is aiming to acheive currently, freely.
+            </p>
+            <a href="https://goals-landing.now.sh/">Learn more on Goals</a>
+          </div>
+        </section>
+        <section className="other-projects">
+          <h3>Some of my projects</h3>
+          <ul className="projects"></ul>
+        </section>
+      </main>
+      <footer>
+        <a
+          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Built with ♥ by Ugo
+        </a>
+      </footer>
+    </div>
+  )
+}
