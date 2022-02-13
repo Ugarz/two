@@ -4,7 +4,17 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontSize: {
+        xs: ".75rem"
+      },
+      maxWidth: {
+        'grid': '1080px'
+      },
+      screens: {
+        "xsm": "300px"
+      }
+    },
   },
   plugins: [],
 }
