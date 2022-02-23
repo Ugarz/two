@@ -1,5 +1,4 @@
 import { ExternalLinkIcon } from '@heroicons/react/solid'
-import Image from 'next/image'
 import { StarIcon } from '@heroicons/react/solid'
 import useSWR from 'swr'
 
@@ -7,22 +6,27 @@ const fetcher = (...args) => fetch(...args).then((res) => res.json())
 
 export default function Projects() {
   const { data, error } = useSWR('https://api.github.com/users/Ugarz/repos', fetcher)
+
   if (error) return <div>Oopsie, Failed to load</div>
   if (!data) return <div>Loading...</div>
 
-  console.log(data[0].updated_at)
-  const sortedProjects = data.sort((a, b) => a.updated_at - b.updated_at)
-  console.log("sorted", sortedProjects)
+  const currentDate = new Date()
+  const limitDate = currentDate.getFullYear() - 2;
+
+  // Filter for the most up to date repositories from Github
+  const filteredRepos = data.filter(repo => new Date(repo.updated_at).getFullYear() >= limitDate)
+  const sortedProjects = filteredRepos.sort((a, b) => a.updated_at > b.updated_at)
+  console.log("sorted", filteredRepos)
 
 
   return (
-    <div className='container mx-auto'>
-      <h2 className='text-xl my-8'>Some of my Github projects ({data.length})</h2>
+    <div>
+      <h2 className='md:text-lg my-8'>A list of the most updated projects since {limitDate} ({sortedProjects.length})</h2>
       <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
         {sortedProjects.map(project => (
           <div key={project.id} className="flex flex-col drop-shadow-lg">
             <a href={project.html_url} target="_blank">
-              <div className="flex flex-col p-2 rounded-lg bg-slate-900 hover:bg-slate-800 text-white">
+              <div className="transition duration-100 flex flex-col p-2 md:rounded-lg bg-slate-900 hover:bg-slate-700 text-white">
                 <h3 className='block text-lg'><strong>{project.name}</strong></h3>
                 <span className='block italic text-sm my-8'>{project.description}</span>
                 <div className='flex flex-row items-baseline text-xs h-5'>

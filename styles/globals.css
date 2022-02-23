@@ -9,7 +9,21 @@
     border-radius: theme('borderRadius.lg');
     box-shadow: theme('boxShadow.xl');
   }
+  .HoverArrow {
+    --arrowSpacing: 5px;
+    --arrowHoverTransition: 150ms cubic-bezier(0.215,0.61,0.355,1);
+    --arrowHoverOffset: translateX(3px);
+    --arrowTipTransform: none;
+    --arrowLineOpacity: 0;
+    position: relative;
+    top: 1px;
+    margin-left: var(--arrowSpacing);
+    stroke-width: 2px;
+    fill: none;
+    stroke: currentColor;
+  }
 }
+
 
 body {
   background-image: radial-gradient(#0a005f, #aa0039);
