@@ -1,4 +1,4 @@
-export interface GithubRepos {
+export type GithubRepos = {
   id: string,
   name: string,
   fullName: string,

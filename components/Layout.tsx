@@ -1,6 +1,7 @@
 import React, { ReactNode } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
+import Image from 'next/image'
 
 type Props = {
   children?: ReactNode
@@ -38,7 +39,10 @@ const Layout = ({ children, title = 'FullStack web developer' }: Props) => (
               <a
                 className='flex'
                 target="_blank"
-                title="Follow me on Twitter">Find me on Twitter <img className="pl-3 h-5" src="twitter.svg" alt="Twitter logo" /></a>
+                title="Follow me on Twitter">
+                Find me on Twitter
+                <Image className="pl-3 h-5" src="twitter.svg" alt="Twitter logo" />
+              </a>
             </Link>
           </li>
           <li className='justify-center inline-flex transition-all duration-150 opacity-70 hover:opacity-100 sm:bg-gray-900 sm:bg-slate-900 py-2 px-5 rounded-sm'>
@@ -46,7 +50,10 @@ const Layout = ({ children, title = 'FullStack web developer' }: Props) => (
               <a
                 className='flex'
                 target="_blank"
-                title="Contact me via Email">Write me on LinkedIn <img className="pl-3 h-5" src="linkedin-icon.svg" alt="Gmail icon" /></a>
+                title="Contact me via Email">
+                Write me on LinkedIn
+                <Image className="pl-3 h-5" src="linkedin-icon.svg" alt="LinkedIn icon" />
+              </a>
             </Link>
           </li>
         </ul>
