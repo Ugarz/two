@@ -1,3 +1,4 @@
+![](https://github.com/Ugarz/two/blob/main/public/screenshot.jpg?raw=true)
 ![Deploy Website](https://github.com/Ugarz/one/workflows/Deploy%20Website/badge.svg)
 
 # To Read
