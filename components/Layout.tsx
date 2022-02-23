@@ -1,7 +1,6 @@
 import React, { ReactNode } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
-import Image from 'next/image'
 
 type Props = {
   children?: ReactNode
@@ -41,7 +40,7 @@ const Layout = ({ children, title = 'FullStack web developer' }: Props) => (
                 target="_blank"
                 title="Follow me on Twitter">
                 Find me on Twitter
-                <Image className="pl-3 h-5" src="twitter.svg" alt="Twitter logo" />
+                <img className="pl-3 h-5" src="/twitter.svg" width="50" height="50" alt="Twitter logo" />
               </a>
             </Link>
           </li>
@@ -52,7 +51,7 @@ const Layout = ({ children, title = 'FullStack web developer' }: Props) => (
                 target="_blank"
                 title="Contact me via Email">
                 Write me on LinkedIn
-                <Image className="pl-3 h-5" src="linkedin-icon.svg" alt="LinkedIn icon" />
+                <img className="pl-3 h-5" src="/linkedin-icon.svg" width="50" height="50" alt="LinkedIn icon" />
               </a>
             </Link>
           </li>

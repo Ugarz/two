@@ -1,7 +1,6 @@
 import { ArrowNarrowRightIcon } from '@heroicons/react/solid'
 
 import Link from 'next/link'
-import Image from 'next/image'
 
 
 import Layout from '../components/Layout'
@@ -11,10 +10,10 @@ const Home = () => (
   <Layout>
     <section className="container mx-auto my-20">
       <div className="container">
-        <h3 className='flex text-xl sm:text-2xl'>Twitch extension <Image className="ml-3 h-5" src="twitch.white.min.svg" alt="Twitch logo" /></h3>
+        <h3 className='flex text-xl sm:text-2xl'>Twitch extension <img className="ml-3 h-5" src="/twitch.white.min.svg" width="20" height="20" alt="Twitch logo" /></h3>
         <div className='my-5'>
-          <p className='my-2 text-lg'>I`&apos;`m <em className='underline underline-offset-8'>Co-Creator</em> of a Twitch Extension named <strong>Goals</strong>.</p>
-          <p>This Twitch extension aim to connect communities to their streamer`&apos;`s <strong>Goals</strong>. I`&apos;`s actually <strong>near 800 active users</strong> on the leading streaming platform.</p>
+          <p className='my-2 text-lg'>I'm <em className='underline underline-offset-8'>Co-Creator</em> of a Twitch Extension named <strong>Goals</strong>.</p>
+          <p>This Twitch extension aim to connect communities to their streamer's <strong>Goals</strong>. I's actually <strong>near 800 active users</strong> on the leading streaming platform.</p>
           <p>By this extension anyone coming to the channel can read what the streamer is aiming to acheive currently, freely.</p>
           <p>Besides some hidden features let you celebrate when you achieve your <strong>Goals</strong>. Do you like gifs? cuz we do.</p>
         </div>
