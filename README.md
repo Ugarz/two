@@ -19,3 +19,5 @@ npm install && npm run dev
 - [Deploy with Github Actions and AWS Elastic Beanstalk](https://dev.to/pllearns/deploy-nextjs-to-aws-eb-with-github-actions-in-2021-2i8b)
 - [Next.js Image optimization](https://github.com/vercel/next.js/discussions/18739#discussioncomment-130777)
 - [Next.js Image optimization - Stack Overflow thread](https://stackoverflow.com/questions/64846858/how-to-use-tailwind-css-with-next-js-image)
+- [Migrate website from Route53 to Vercel](https://guetteluis.com/blog/how-to-use-domain-in-aws-with-vercel)
+- [next-optimized-images - Alternative to Image Optimization with Next.js](https://github.com/cyrilwanner/next-optimized-images#installation)
