@@ -17,10 +17,9 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-
       # Uses Node.js 16.x to build SSG Website
       - name: Use Node.js ${{ matrix.node-version }} to build
-      - uses: actions/setup-node@v2
+        uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
@@ -29,7 +28,7 @@ jobs:
 
       # Add cache support for smooth continuous integration
       - name: Caching the website
-      - uses: actions/cache@v2
+        uses: actions/cache@v2
         with:
           # See here for caching with `yarn` https://github.com/actions/cache/blob/main/examples.md#node---yarn or you can leverage caching with actions/setup-node https://github.com/actions/setup-node
           path: |
@@ -43,7 +42,7 @@ jobs:
 
       # Configure environnement with secrets to push the website in AWS S3
       - name: Configure AWS Credentials
-      - uses: aws-actions/configure-aws-credentials@v1
+        uses: aws-actions/configure-aws-credentials@v1
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
@@ -51,4 +50,4 @@ jobs:
 
       # AWS Sync
       - name: Deploy static site to S3 bucket
-      - run: aws s3 sync ./build s3://ugoarzur.fr
+        run: aws s3 sync ./build s3://ugoarzur.fr
