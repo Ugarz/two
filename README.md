@@ -17,3 +17,5 @@ npm install && npm run dev
 # To Read
 - [Try to map the Severless process through Github Actions](https://maxrohde.com/2021/01/30/deploy-next-js-to-aws/)
 - [Deploy with Github Actions and AWS Elastic Beanstalk](https://dev.to/pllearns/deploy-nextjs-to-aws-eb-with-github-actions-in-2021-2i8b)
+- [Next.js Image optimization](https://github.com/vercel/next.js/discussions/18739#discussioncomment-130777)
+- [Next.js Image optimization - Stack Overflow thread](https://stackoverflow.com/questions/64846858/how-to-use-tailwind-css-with-next-js-image)
