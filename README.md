@@ -21,3 +21,7 @@ npm install && npm run dev
 - [Next.js Image optimization - Stack Overflow thread](https://stackoverflow.com/questions/64846858/how-to-use-tailwind-css-with-next-js-image)
 - [Migrate website from Route53 to Vercel](https://guetteluis.com/blog/how-to-use-domain-in-aws-with-vercel)
 - [next-optimized-images - Alternative to Image Optimization with Next.js](https://github.com/cyrilwanner/next-optimized-images#installation)
+- [Transitioning Gradients in CSS](https://keithjgrant.com/posts/2017/07/transitioning-gradients/)
+- [Notion Documentation](https://developers.notion.com/reference/intro)
+- [Notion hq SDK](https://github.com/makenotion/notion-sdk-js)
+- [How to Connect a React App to a Notion Database](https://youtu.be/OXmCm-DChp8)

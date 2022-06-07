@@ -8,6 +8,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        roboto: ['Roboto Mono', 'monospace'],
+        share: ['Share Tech Mono', 'monospace']
+      },
       fontSize: {
         xs: ".75rem"
       },

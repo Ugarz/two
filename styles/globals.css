@@ -3,34 +3,16 @@
 @tailwind utilities;
 
 @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
-
-@layer components {
-  .card {
-    border-radius: theme('borderRadius.lg');
-    box-shadow: theme('boxShadow.xl');
-  }
-  .HoverArrow {
-    --arrowSpacing: 5px;
-    --arrowHoverTransition: 150ms cubic-bezier(0.215,0.61,0.355,1);
-    --arrowHoverOffset: translateX(3px);
-    --arrowTipTransform: none;
-    --arrowLineOpacity: 0;
-    position: relative;
-    top: 1px;
-    margin-left: var(--arrowSpacing);
-    stroke-width: 2px;
-    fill: none;
-    stroke: currentColor;
-  }
-}
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,400;0,500;0,700;1,100;1,700&family=Share+Tech+Mono&display=swap');
 
 
 body {
-  background-image: radial-gradient(#0a005f, #aa0039);
+  background-image: radial-gradient(#0a005f, #aa0039, #230063);
   background-size: 250% 250%;
   height: 100vh;
-  animation: borders 60s linear infinite;
+  animation: borders 60s ease-in-out infinite;
   color: white;
+  font-family: 'Roboto';
 }
 
 
@@ -46,6 +28,7 @@ body {
     0%, 50% { opacity: 0; width: 0; }
     100% { opacity: 1; width: 100%; }
 }
+
 @keyframes borders {
     0%  { background-position: 0 0; }
     20% { background-position: 100% 0; }

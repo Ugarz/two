@@ -23,14 +23,14 @@ export default function Projects() {
 
   return (
     <div>
-      <h2 className='md:text-lg my-8'>A list of the most updated projects since {limitDate} ({sortedProjects.length})</h2>
+      <h2 className='md:text-lg my-8'>Some of my projects since {limitDate}</h2>
       <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
         {sortedProjects.map((project: GithubRepos) => (
           <div key={project.id} className="flex flex-col drop-shadow-lg">
             <a href={project.html_url} target="_blank" rel="noreferrer">
               <div className="transition duration-100 flex flex-col p-2 md:rounded-lg bg-slate-900 hover:bg-slate-700 text-white">
-                <h3 className='block text-lg'><strong>{project.name}</strong></h3>
-                <span className='block italic text-sm my-8'>{project.description}</span>
+                <h3 className='text-xl font-share'><strong>{project.name}</strong></h3>
+                <span className='italic text-sm my-8'>{project.description}</span>
                 <div className='flex flex-row items-baseline text-xs h-5'>
                   <div className="flex-1 inline-flex items-baseline"><strong className='flex-1'>{project.language}</strong></div>
                   <div className="flex-1 inline-flex items-baseline">
