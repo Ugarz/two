@@ -9,7 +9,7 @@ const fetcher = (endpoint: string) => fetch(endpoint).then((res) => res.json());
 export default function Projects() {
   const { data, error } = useSWR('https://api.github.com/users/Ugarz/repos', fetcher)
 
-  if (error) return <div>Oopsie, Failed to load</div>
+  if (error) return <div>Oopsie, Failed to load data</div>
   if (!data) return <div>Loading...</div>
 
   const currentDate = new Date()
@@ -18,7 +18,6 @@ export default function Projects() {
   // Filter for the most up to date repositories from Github
   const filteredRepos = data.filter((repo: GithubRepos) => new Date(repo.updated_at).getFullYear() >= limitDate)
   const sortedProjects = filteredRepos.sort((a: GithubRepos, b: GithubRepos) => a.updated_at > b.updated_at)
-  console.log("sorted", filteredRepos)
 
 
   return (
@@ -28,7 +27,7 @@ export default function Projects() {
         {sortedProjects.map((project: GithubRepos) => (
           <div key={project.id} className="flex flex-col drop-shadow-lg">
             <a href={project.html_url} target="_blank" rel="noreferrer">
-              <div className="transition duration-100 flex flex-col p-2 md:rounded-lg bg-slate-900 hover:bg-slate-700 text-white">
+              <div className="transition duration-100 flex flex-col p-2 sm:rounded-lg bg-slate-900/20 hover:bg-slate-900/80 text-white p-10">
                 <h3 className='text-xl font-share'><strong>{project.name}</strong></h3>
                 <span className='italic text-sm my-8'>{project.description}</span>
                 <div className='flex flex-row items-baseline text-xs h-5'>

@@ -33,7 +33,7 @@ const Layout = ({ children, title = defaultJobTitle }: Props) => (
     </Head>
     <div className='container mx-auto'>
       <header>
-        <section className='h-screen justify-center items-center sm:h-auto md:container md:mx-auto text-center flex flex-col'>
+        <section className='h-screen sm:h-auto md:container md:mx-auto text-center flex flex-col'>
           <h1 className='px-5 xsm:my-20 text-2xl md:text-4xl text-white font-roboto'>{title}</h1>
           <Currently free={false} />
           <ul className='flex flex-col my-3 md:flex-row justify-center'>
