@@ -38,39 +38,36 @@ const Layout = ({ children, title = defaultJobTitle }: Props) => (
           <Currently free={false} />
           <ul className='flex flex-col my-3 md:flex-row justify-center'>
             <li className='font-roboto justify-center inline-flex md:mr-1 transition-all duration-150 cursor-pointer opacity-80 hover:opacity-100 hover:bg-gray-200 hover:font-medium hover:text-black sm:bg-gray-900 sm:bg-slate-900 py-2 px-5 rounded-sm'>
-              <Link href="https://twitter.com/ArzurUgo">
-                <a
-                  className='flex'
-                  target="_blank"
-                  title="Follow me on Twitter">
-                  Find me on Twitter
-                  <div className='h-5 w-6 ml-3 relative'>
-                    <Image
-                      className="pl-3 h-5"
-                      src="/twitter.svg"
-                      objectFit='cover'
-                      layout='fill'
-                      alt="Twitter logo" />
-                  </div>
-                </a>
+              <Link href="https://twitter.com/ArzurUgo"
+                className='flex'
+                target="_blank"
+                title="Follow me on Twitter">
+                Find me on Twitter
+                <div className='h-5 w-6 ml-3 relative'>
+                  <Image
+                    className="pl-3 h-5"
+                    src="/twitter.svg"
+                    objectFit='cover'
+                    layout='fill'
+                    alt="Twitter logo" />
+                </div>
               </Link>
             </li>
             <li className='font-roboto justify-center inline-flex transition-all duration-150 cursor-pointer opacity-80 hover:opacity-100 hover:bg-gray-200 hover:font-medium hover:text-black sm:bg-gray-900 sm:bg-slate-900 py-2 px-5 rounded-sm'>
-              <Link href="https://www.linkedin.com/in/ugarz/">
-                <a
-                  className='flex'
-                  target="_blank"
-                  title="Contact me via Email">
-                  Write me on LinkedIn
-                  <div className='h-6 w-6 ml-3 relative'>
-                    <Image
-                      className="pl-3 h-5"
-                      src="/linkedin-icon.svg"
-                      objectFit='cover'
-                      layout='fill'
-                      alt="LinkedIn icon" />
-                  </div>
-                </a>
+              <Link
+                href="https://www.linkedin.com/in/ugarz/"
+                className='flex'
+                target="_blank"
+                title="Contact me via Email">
+                Write me on LinkedIn
+                <div className='h-6 w-6 ml-3 relative'>
+                  <Image
+                    className="pl-3 h-5"
+                    src="/linkedin-icon.svg"
+                    objectFit='cover'
+                    layout='fill'
+                    alt="LinkedIn icon" />
+                </div>
               </Link>
             </li>
           </ul>
