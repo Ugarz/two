@@ -45,7 +45,6 @@ const Layout = ({ children, title = defaultJobTitle }: Props) => (
                 Find me on Twitter
                 <div className='h-5 w-6 ml-3 relative'>
                   <Image
-                    className="pl-3 h-5"
                     src="/twitter.svg"
                     objectFit='cover'
                     layout='fill'
@@ -62,7 +61,6 @@ const Layout = ({ children, title = defaultJobTitle }: Props) => (
                 Write me on LinkedIn
                 <div className='h-6 w-6 ml-3 relative'>
                   <Image
-                    className="pl-3 h-5"
                     src="/linkedin-icon.svg"
                     objectFit='cover'
                     layout='fill'
