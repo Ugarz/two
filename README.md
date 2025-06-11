@@ -1,27 +1,39 @@
-![](https://github.com/Ugarz/two/blob/main/public/screenshot.jpg?raw=true)
-![Deploy Website](https://github.com/Ugarz/one/workflows/Deploy%20Website/badge.svg)
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-# Launch the project
+## Getting Started
+
+First, run the development server:
+
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
-git clone git@github.com:Ugarz/two.git && cd two/
-npm install && npm run dev
-```
 
-# Roadmap
-- [x] Rebuild my website with [Next.js](https://nextjs.org/) and [TypeScript](https://www.typescriptlang.org/).
-- [x] Add Responsive behaviour.
-- [ ] Optimize the `build/` folder.
-- [ ] Repair the Deploy Github Action (was working on v1).
-- [ ] Deploy to Vercel in order to support Image optimization built-in.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-# To Read
-- [Try to map the Severless process through Github Actions](https://maxrohde.com/2021/01/30/deploy-next-js-to-aws/)
-- [Deploy with Github Actions and AWS Elastic Beanstalk](https://dev.to/pllearns/deploy-nextjs-to-aws-eb-with-github-actions-in-2021-2i8b)
-- [Next.js Image optimization](https://github.com/vercel/next.js/discussions/18739#discussioncomment-130777)
-- [Next.js Image optimization - Stack Overflow thread](https://stackoverflow.com/questions/64846858/how-to-use-tailwind-css-with-next-js-image)
-- [Migrate website from Route53 to Vercel](https://guetteluis.com/blog/how-to-use-domain-in-aws-with-vercel)
-- [next-optimized-images - Alternative to Image Optimization with Next.js](https://github.com/cyrilwanner/next-optimized-images#installation)
-- [Transitioning Gradients in CSS](https://keithjgrant.com/posts/2017/07/transitioning-gradients/)
-- [Notion Documentation](https://developers.notion.com/reference/intro)
-- [Notion hq SDK](https://github.com/makenotion/notion-sdk-js)
-- [How to Connect a React App to a Notion Database](https://youtu.be/OXmCm-DChp8)
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+
+## Learn More
+
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+v0
+I want to build my portfolio. This will be a minimalist website in one page, first a title with my name and my job title as a software engineer and then a grid of my github project showcase fetch with a call api. When I click on a project I can read details on each project (description, stars, languages, last push).
