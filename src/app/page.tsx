@@ -11,6 +11,7 @@ import {
   Mail,
   Briefcase,
   AlertCircleIcon,
+  Linkedin,
 } from 'lucide-react'
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
 import { Button } from '@/components/ui/button'
@@ -160,7 +161,7 @@ export default function Portfolio() {
             >
               <Github className="h-4 w-4" />
               <Link target="_blank" href={`https://github.com/${username}`}>
-                Profile
+                Github
               </Link>
             </Button>
             <Button
@@ -168,8 +169,11 @@ export default function Portfolio() {
               size="sm"
               className="flex items-center gap-2"
             >
-              <ExternalLink className="h-4 w-4" />
-              Resume
+              <Linkedin className="h-4 w-4" />
+              <Link
+                target="_blank" href={"https://linkedin.com/in/ugarz"}>
+                LinkedIn
+              </Link>
             </Button>
             <Button
               variant="outline"
