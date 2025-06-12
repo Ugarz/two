@@ -123,6 +123,22 @@ export default function Portfolio() {
     })
   }
 
+  // Job experience data
+  const experience = [
+    {
+      title: 'Senior Software Engineer',
+      company: 'Tech Company Inc.',
+      start: '2021',
+      end: 'Present',
+    },
+    {
+      title: 'Software Developer',
+      company: 'Digital Solutions Ltd.',
+      start: '2018',
+      end: '2021',
+    },
+  ]
+
   return (
     <main className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-16 max-w-5xl">
@@ -259,29 +275,18 @@ export default function Portfolio() {
                     <Briefcase className="h-5 w-5" /> Experience
                   </h3>
                   <div className="space-y-4">
-                    <div>
-                      <div className="flex justify-between">
-                        <h4 className="font-medium">
-                          Senior Software Engineer
-                        </h4>
-                        <span className="text-muted-foreground text-sm">
-                          2021 - Present
-                        </span>
+                    {experience.map((job, idx) => (
+                      <div key={job.title + job.company}>
+                        <div className="flex justify-between">
+                          <h4 className="font-medium">{job.title}</h4>
+                          <span className="text-muted-foreground text-sm">
+                            {job.start} - {job.end}
+                          </span>
+                        </div>
+                        <p className="text-muted-foreground">{job.company}</p>
+                        {idx !== experience.length - 1 && <Separator />}
                       </div>
-                      <p className="text-muted-foreground">Tech Company Inc.</p>
-                    </div>
-                    <Separator />
-                    <div>
-                      <div className="flex justify-between">
-                        <h4 className="font-medium">Software Developer</h4>
-                        <span className="text-muted-foreground text-sm">
-                          2018 - 2021
-                        </span>
-                      </div>
-                      <p className="text-muted-foreground">
-                        Digital Solutions Ltd.
-                      </p>
-                    </div>
+                    ))}
                   </div>
                 </div>
 
