@@ -7,56 +7,27 @@ import {
   Star,
   Code,
   Calendar,
-  User,
-  Mail,
-  Briefcase,
-  AlertCircleIcon,
-  Linkedin,
 } from 'lucide-react'
-import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
 import { Button } from '@/components/ui/button'
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card'
 import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle,
 } from '@/components/ui/dialog'
-import { Skeleton } from '@/components/ui/skeleton'
 import { Badge } from '@/components/ui/badge'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
-import { Separator } from '@/components/ui/separator'
-import Link from 'next/link'
 
-// Types for GitHub API responses
-interface Repository {
-  id: number
-  name: string
-  description: string
-  html_url: string
-  stargazers_count: number
-  language: string
-  created_at: string
-  pushed_at: string
-  updated_at: string
-  topics: string[]
-  homepage: string | null
-  clone_url: string
-}
+import Header from '@/components/Header'
+import { Repository } from '@/lib/types'
+import Projects from '@/components/Projects'
+
 
 interface Language {
   [key: string]: number
 }
 
 export default function Portfolio() {
-  const [repos, setRepos] = useState<Repository[]>([])
+  const [repositories, setRepositories] = useState<Repository[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
   const [selectedRepo, setSelectedRepo] = useState<Repository | null>(null)
@@ -79,12 +50,12 @@ export default function Portfolio() {
 
         const data: Repository[] = await response.json()
         console.log('Fetched repositories:', data)
-        const orderedData = data.sort(
+        const orderedData: Repository[] = data.sort(
           (previousRepo: Repository, nextRepo: Repository) =>
             new Date(nextRepo.updated_at).getTime() -
             new Date(previousRepo.updated_at).getTime()
         )
-        setRepos(orderedData)
+        setRepositories(orderedData)
       } catch (err) {
         setError(
           'Error fetching repositories. Please check your GitHub username.'
@@ -124,202 +95,12 @@ export default function Portfolio() {
     })
   }
 
-  // Job experience data
-  const experience = [
-    {
-      title: 'Senior Software Engineer',
-      company: 'Tech Company Inc.',
-      start: '2021',
-      end: 'Present',
-    },
-    {
-      title: 'Software Developer',
-      company: 'Digital Solutions Ltd.',
-      start: '2018',
-      end: '2021',
-    },
-  ]
-
   return (
     <main className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-16 max-w-5xl">
-        {/* Header Section */}
-        <Card className="mb-12 border-none shadow-none bg-transparent">
-          <CardHeader className="text-center space-y-2 pb-2">
-            <CardTitle className="text-4xl md:text-5xl font-bold">
-              Ugo Arzur
-            </CardTitle>
-            <CardDescription className="text-xl md:text-2xl">
-              Software Engineer
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="flex justify-center space-x-4 pt-2">
-            <Button
-              variant="outline"
-              size="sm"
-              className="flex items-center gap-2"
-            >
-              <Github className="h-4 w-4" />
-              <Link target="_blank" href={`https://github.com/${username}`}>
-                Github
-              </Link>
-            </Button>
-            <Button
-              variant="outline"
-              size="sm"
-              className="flex items-center gap-2"
-            >
-              <Linkedin className="h-4 w-4" />
-              <Link
-                target="_blank" href={"https://linkedin.com/in/ugarz"}>
-                LinkedIn
-              </Link>
-            </Button>
-            <Button
-              variant="outline"
-              size="sm"
-              className="flex items-center gap-2"
-            >
-              <Mail className="h-4 w-4" />
-              Contact
-            </Button>
-          </CardContent>
-        </Card>
+        <Header githubUsername={username} linkedinUsername={username} />
+        <Projects error={error} loading={loading} handleRepoClick={handleRepoClick} repositories={repositories} />
 
-        {/* Projects Section */}
-        <Tabs defaultValue="projects" className="mb-12">
-          <TabsList className="grid w-full max-w-md mx-auto grid-cols-2 mb-8">
-            <TabsTrigger value="projects">Projects</TabsTrigger>
-            <TabsTrigger value="about">About Me</TabsTrigger>
-          </TabsList>
-
-          <TabsContent value="projects">
-            {error && (
-              <div className="w-full max-w-2/3 mx-auto mb-8">
-                <Alert variant="destructive">
-                  <AlertCircleIcon />
-                  <AlertTitle>Whoops</AlertTitle>
-                  <AlertDescription>
-                    <p>{error}</p>
-                  </AlertDescription>
-                </Alert>
-              </div>
-            )}
-
-            {loading ? (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {[...Array(6)].map((_, i) => (
-                  <Card key={i} className="overflow-hidden">
-                    <CardHeader className="pb-2">
-                      <Skeleton className="h-6 w-3/4 mb-2" />
-                    </CardHeader>
-                    <CardContent className="pb-2">
-                      <Skeleton className="h-4 w-full mb-2" />
-                      <Skeleton className="h-4 w-5/6" />
-                    </CardContent>
-                    <CardFooter className="flex justify-between pt-2">
-                      <Skeleton className="h-5 w-16" />
-                      <Skeleton className="h-5 w-24" />
-                    </CardFooter>
-                  </Card>
-                ))}
-              </div>
-            ) : (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {repos.map((repo: Repository) => (
-                  <Card
-                    key={repo.id}
-                    className="overflow-hidden hover:shadow-md transition-shadow cursor-pointer h-[220px] flex flex-col"
-                    onClick={() => handleRepoClick(repo)}
-                  >
-                    <CardHeader className="pb-2">
-                      <CardTitle className="text-lg">{repo.name}</CardTitle>
-                    </CardHeader>
-                    <CardContent className="pb-2 flex-grow">
-                      <p className="text-muted-foreground text-sm line-clamp-3">
-                        {repo.description || 'No description available'}
-                      </p>
-                    </CardContent>
-                    <CardFooter className="pt-2 flex justify-between items-center">
-                      <div className="flex items-center">
-                        <Star className="h-4 w-4 text-yellow-500 mr-1" />
-                        <span className="text-sm text-muted-foreground">
-                          {repo.stargazers_count}
-                        </span>
-                      </div>
-                      {repo.language && (
-                        <Badge variant="secondary" className="font-normal">
-                          {repo.language}
-                        </Badge>
-                      )}
-                    </CardFooter>
-                  </Card>
-                ))}
-              </div>
-            )}
-          </TabsContent>
-
-          <TabsContent value="about">
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <User className="h-5 w-5" /> About Me
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <p>
-                  I'm a passionate software engineer with expertise in web
-                  development, focusing on creating efficient and user-friendly
-                  applications. My technical skills include JavaScript,
-                  TypeScript, React, Next.js, and more.
-                </p>
-
-                <div>
-                  <h3 className="text-lg font-medium mb-2 flex items-center gap-2">
-                    <Briefcase className="h-5 w-5" /> Experience
-                  </h3>
-                  <div className="space-y-4">
-                    {experience.map((job, idx) => (
-                      <div key={job.title + job.company}>
-                        <div className="flex justify-between">
-                          <h4 className="font-medium">{job.title}</h4>
-                          <span className="text-muted-foreground text-sm">
-                            {job.start} - {job.end}
-                          </span>
-                        </div>
-                        <p className="text-muted-foreground">{job.company}</p>
-                        {idx !== experience.length - 1 && <Separator />}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div>
-                  <h3 className="text-lg font-medium mb-2 flex items-center gap-2">
-                    <Code className="h-5 w-5" /> Skills
-                  </h3>
-                  <div className="flex flex-wrap gap-2">
-                    {[
-                      'JavaScript',
-                      'TypeScript',
-                      'React',
-                      'Next.js',
-                      'Node.js',
-                      'CSS',
-                      'Tailwind',
-                      'Git',
-                      'CI/CD',
-                    ].map((skill) => (
-                      <Badge key={skill} variant="outline">
-                        {skill}
-                      </Badge>
-                    ))}
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </TabsContent>
-        </Tabs>
         {/* Project Details Modal */}
         <Dialog open={modalOpen} onOpenChange={setModalOpen}>
           <DialogContent className="sm:max-w-lg">
