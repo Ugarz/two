@@ -107,7 +107,7 @@ export default function Projects({ error, loading, repositories, handleRepoClick
           </CardHeader>
           <CardContent className="space-y-4">
             <p>
-              I'm a passionate software engineer with expertise in web
+              I&apos;m a passionate software engineer with expertise in web
               development, focusing on creating efficient and user-friendly
               applications. My technical skills include JavaScript,
               TypeScript, React, Next.js, and more.
