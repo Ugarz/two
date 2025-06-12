@@ -13,15 +13,15 @@ export default function Projects({ error, loading, repositories, handleRepoClick
   // Job experience data
   const experience = [
     {
-      title: 'Senior Software Engineer',
-      company: 'Tech Company Inc.',
-      start: '2021',
+      title: 'Blockchain Software Engineer',
+      company: 'EY',
+      start: '2022',
       end: 'Present',
     },
     {
       title: 'Software Developer',
-      company: 'Digital Solutions Ltd.',
-      start: '2018',
+      company: 'Morning',
+      start: '2015',
       end: '2021',
     },
   ]
@@ -108,9 +108,14 @@ export default function Projects({ error, loading, repositories, handleRepoClick
           <CardContent className="space-y-4">
             <p>
               I&apos;m a passionate software engineer with expertise in web
-              development, focusing on creating efficient and user-friendly
-              applications. My technical skills include JavaScript,
-              TypeScript, React, Next.js, and more.
+              development. I am focusing on creating efficient and user-friendly
+              applications.<br />
+              My technical skills include TypeScript, Next.js, NextJS with Nx as an orchestrator.
+              I tend to work with modern frameworks and libraries to build scalable and maintainable applications.
+              <br />
+              I have a strong interest in <b>blockchain technology</b> and its applications but due to the lack of business now <b>I am learning <u>a lot</u> about AI</b>, specially in machine learning.
+              <br />
+              In my spare time, I love exploring new technologies and contributing to open-source projects.
             </p>
 
             <div>
