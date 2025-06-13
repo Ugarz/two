@@ -6,25 +6,15 @@ import { Skeleton } from "./ui/skeleton";
 import { Badge } from "./ui/badge";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "./ui/tabs";
 import { Repository } from "@/lib/types";
+import { cvSchema, CvExperience } from "@/lib/cvSchema";
+import cvRaw from "../../public/cv.json";
 
 type ProjectsProps = { error: string | null, loading: boolean, repositories: Repository[], handleRepoClick: (repo: Repository) => void }
 
 export default function Projects({ error, loading, repositories, handleRepoClick }: ProjectsProps) {
-  // Job experience data
-  const experience = [
-    {
-      title: 'Blockchain Software Engineer',
-      company: 'EY',
-      start: '2022',
-      end: 'Present',
-    },
-    {
-      title: 'Software Developer',
-      company: 'Morning',
-      start: '2015',
-      end: '2021',
-    },
-  ]
+  const cvParsed = cvSchema.safeParse(cvRaw)
+  const experiences: CvExperience[] = cvParsed.success ? cvParsed.data : []
+
   return (
     <Tabs defaultValue="projects" className="mb-12">
       <TabsList className="grid w-full max-w-md mx-auto grid-cols-2 mb-8">
@@ -106,14 +96,14 @@ export default function Projects({ error, loading, repositories, handleRepoClick
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
-            <p>
+            <p className="pb-5 leading-relaxed text-base tracking-wide">
               I&apos;m a passionate software engineer with expertise in web
               development. I am focusing on creating efficient and user-friendly
-              applications.<br />
+              applications.
               My technical skills include TypeScript, Next.js, NextJS with Nx as an orchestrator.
               I tend to work with modern frameworks and libraries to build scalable and maintainable applications.
               <br />
-              I have a strong interest in <b>blockchain technology</b> and its applications but due to the lack of business now <b>I am learning <u>a lot</u> about AI</b>, specially in machine learning.
+              I have a strong interest in <b className="blur-2xs transition duration-300 ease-in-out hover:blur-none">Blockchain technology</b> and its applications but due to the lack of business, now I am learning <u>a lot</u> about  <b className="blur-2xs transition duration-300 ease-in-out hover:blur-none">Artificial Intelligence</b>, specially in  <b className="blur-2xs transition duration-300 ease-in-out hover:blur-none">machine learning</b> field.
               <br />
               In my spare time, I love exploring new technologies and contributing to open-source projects.
             </p>
@@ -123,16 +113,17 @@ export default function Projects({ error, loading, repositories, handleRepoClick
                 <Briefcase className="h-5 w-5" /> Experience
               </h3>
               <div className="space-y-4">
-                {experience.map((job, idx) => (
-                  <div key={job.title + job.company}>
+                {experiences.map((experience, idx) => (
+                  <div key={experience.title + experience.company + experience.start}>
                     <div className="flex justify-between">
-                      <h4 className="font-medium">{job.title}</h4>
+                      <h4 className="font-medium">{experience.title}</h4>
                       <span className="text-muted-foreground text-sm">
-                        {job.start} - {job.end}
+                        {experience.start} - {experience.end}
                       </span>
                     </div>
-                    <p className="text-muted-foreground">{job.company}</p>
-                    {idx !== experience.length - 1 && <Separator />}
+                    <p className="text-muted-foreground">{experience.company}</p>
+                    <p className="text-xs mt-1">{experience.description}</p>
+                    {idx !== experiences.length - 1 && <Separator />}
                   </div>
                 ))}
               </div>

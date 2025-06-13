@@ -1,0 +1,51 @@
+[
+  {
+    "title": "Software Engineer Blockchain",
+    "company": "EY Fabernovel",
+    "start": "2022-03",
+    "end": "Present",
+    "description": "Working on front and back end office, focusing on developing smart contracts in the blockchain. Building expertise on well-known blockchains and learning new technical opportunities for major clients within my company EY Fabernovel."
+  },
+  {
+    "title": "Backend developer",
+    "company": "Morning",
+    "start": "2021-02",
+    "end": "2022-03",
+    "description": "Worked on various missions mainly using JavaScript with NodeJS. - Refonte du front-end en React.js - Development of APIs for a payment service for professionals - Migration of a monolithic back-end to micro-services - Creation of a KYC (Know Your Customer) system - Specialization in handling SEPA cross-bank transfers (with bank account registry management). - Development of a GDPR feature (anonymization of databases, data recovery)."
+  },
+  {
+    "title": "Full Stack developer",
+    "company": "Morning",
+    "start": "2015-05",
+    "end": "2021-02",
+    "description": "Worked as a web developer, realizing various different missions mainly using JavaScript with NodeJs. - Front-end refactoring in React.js - Development of APIs for payment service for small businesses."
+  },
+  {
+    "title": "Web Developer - Freelance",
+    "company": "My company",
+    "start": "2012-12",
+    "end": "2017-05",
+    "description": "Worked on various projects such as web design, front-end development. - Design and development of a website for a psychoanalyst association. - Development of a cost simulation tool for house insulation. - Creation of a 2D drawing canvas on a 3D environment background. - Creation of flyers and posters for businesses."
+  },
+  {
+    "title": "Web developer",
+    "company": "Totem numérique",
+    "start": "2014-04",
+    "end": "2014-09",
+    "description": "Realization of a website with Typo3 (Open Source CMS). - Realization and integration of a newsletter. - Creating an Hybrid app for Android (PhoneGap, Angular js, html, css, javascript)."
+  },
+  {
+    "title": "Graphist",
+    "company": "Imagic",
+    "start": "2012-06",
+    "end": "2012-07",
+    "description": "Design logos, flyers, posters creations. - Creation of a promotional video."
+  },
+  {
+    "title": "Graphist",
+    "company": "24 Graphisme",
+    "start": "2012-06",
+    "end": "2012-07",
+    "description": "Design of paper media for print (flyers, posters, booklets) and redesign of graphic charters. - Web design and multi-media communication."
+  }
+]
