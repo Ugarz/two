@@ -4,8 +4,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/
 import Link from "next/link";
 
 export default function Header({ githubUsername, linkedinUsername }: {
-  githubUsername: string;
-  linkedinUsername: string;
+  githubUsername: string | undefined;
+  linkedinUsername: string | undefined;
 }) {
   return (
     <Card className="mb-12 border-none shadow-none bg-transparent">
